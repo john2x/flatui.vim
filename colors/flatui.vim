@@ -1,4 +1,3 @@
-
 " flatui.vim - Vim color scheme (http://flatuicolors.com)
 " ----------------------------------------------------------
 " Author:	John Louis Del Rosario (http://john2x.com/)
@@ -20,30 +19,30 @@ let g:colors_name="flatui"
 "}}}
 " The Colors -----------------------------------------------{{{
 " Define reusable colors
-let s:midnightBlue=   { "gui": "#000000", "cterm": "237"  }
-let s:clouds=         { "gui": "#FFFFFF", "cterm": "255" }
-let s:silver=         { "gui": "#EEEEEE", "cterm": "7" }
-let s:wetAsphalt=     { "gui": "#111111", "cterm": "239" }
-let s:concrete=       { "gui": "#777777", "cterm": "247" }
-let s:asbestos=       { "gui": "#999999", "cterm": "102" }
+let s:midnightBlue=   { "gui": "#2c3e50", "cterm": "237"  }
+let s:clouds=         { "gui": "#ecf0f1", "cterm": "255" }
+let s:silver=         { "gui": "#bdc3c7", "cterm": "7" }
+let s:wetAsphalt=     { "gui": "#34495e", "cterm": "239" }
+let s:concrete=       { "gui": "#95a5a6", "cterm": "247" }
+let s:asbestos=       { "gui": "#7f8c8d", "cterm": "102" }
 
-let s:turquoise=      { "gui": "#63001C", "cterm": "37"  }
-let s:greenSea=       { "gui": "#FF0055", "cterm": "36" }
-let s:emerald=        { "gui": "#D65E76", "cterm": "41" }
-let s:nephritis=      { "gui": "#FFAFAF", "cterm": "35" }
+let s:turquoise=      { "gui": "#1abc9c", "cterm": "37"  }
+let s:greenSea=       { "gui": "#16a085", "cterm": "36" }
+let s:emerald=        { "gui": "#2ecc71", "cterm": "41" }
+let s:nephritis=      { "gui": "#27ae60", "cterm": "35" }
 
-let s:peterRiver=     { "gui": "#005F87", "cterm": "68"  }
-let s:belizeHole=     { "gui": "#538192", "cterm": "31"  }
-let s:amethyst=       { "gui": "#9FD3E6", "cterm": "133" }
-let s:wisteria=       { "gui": "#CBE4EE", "cterm": "97" }
+let s:peterRiver=     { "gui": "#3498db", "cterm": "68"  }
+let s:belizeHole=     { "gui": "#2980b9", "cterm": "31"  }
+let s:amethyst=       { "gui": "#9b59b6", "cterm": "133" }
+let s:wisteria=       { "gui": "#8e44ad", "cterm": "97" }
 
-let s:carrot=         { "gui": "#5F5F00", "cterm": "172"  }
-let s:pumpkin=        { "gui": "#739200", "cterm": "166"  }
-let s:sunFlower=      { "gui": "#B1D631", "cterm": "220" }
-let s:orange=         { "gui": "#BBFFAA", "cterm": "214" }
+let s:carrot=         { "gui": "#e67e22", "cterm": "172"  }
+let s:pumpkin=        { "gui": "#d35400", "cterm": "166"  }
+let s:sunFlower=      { "gui": "#f1c40f", "cterm": "220" }
+let s:orange=         { "gui": "#f39c12", "cterm": "214" }
 
-let s:alizarin=       { "gui": "#503D15", "cterm": "167"  }
-let s:pomegranate=    { "gui": "#ECE1C8", "cterm": "130" }
+let s:alizarin=       { "gui": "#e74c3c", "cterm": "167"  }
+let s:pomegranate=    { "gui": "#c0392b", "cterm": "130" }
 
 " Assign to semantic categories based on background color
 " Light theme
