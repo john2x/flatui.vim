@@ -52,14 +52,22 @@ let s:comment=s:silver
 let s:dimmed=s:asbestos
 let s:subtle=s:concrete
 let s:faint=s:silver
-let s:accent1=s:greenSea
-let s:accent2=s:orange
-let s:accent3=s:wisteria
-let s:accent4=s:pumpkin
-let s:accent5=s:turquoise
-let s:accent6=s:sunFlower
-let s:accent7=s:amethyst
-let s:accent8=s:carrot
+let s:faintAccent1=s:turquoise
+let s:faintAccent2=s:emerald
+let s:faintAccent3=s:peterRiver
+let s:faintAccent4=s:amethyst
+let s:faintAccent5=s:concrete
+let s:faintAccent6=s:sunFlower
+let s:faintAccent7=s:carrot
+let s:faintAccent8=s:alizarin
+let s:normAccent1=s:greenSea
+let s:normAccent2=s:nephritis
+let s:normAccent3=s:belizeHole
+let s:normAccent4=s:wisteria
+let s:normAccent5=s:wetAsphalt
+let s:normAccent6=s:orange
+let s:normAccent7=s:pumpkin
+let s:normAccent8=s:pomegranate
 let s:normRed=s:pomegranate
 let s:normGreen=s:nephritis
 let s:normBlue=s:belizeHole
@@ -83,51 +91,51 @@ endfunction
 "}}}
 " Highlights - Vim >= 7 ------------------------------------{{{
 if version >= 700
-	call s:h("CursorLine",  { "bg": s:faint })
-	call s:h("MatchParen",  { "fg": s:bg, "bg": s:accent7, "gui": "bold" })
-	call s:h("Pmenu",       { "bg": s:faint })
+	call s:h("CursorLine",  { "bg": s:silver })
+	call s:h("MatchParen",  { "fg": s:bg, "bg": s:sunFlower, "gui": "bold" })
+	call s:h("Pmenu",       { "bg": s:silver })
 	call s:h("PmenuThumb",  { "bg": s:norm })
-	call s:h("PmenuSBar",   { "bg": s:subtle })
-	call s:h("PmenuSel",    { "bg": s:faintBlue })
-	call s:h("ColorColumn", { "bg": s:faintRed })
-	call s:h("SpellBad",    { "sp": s:normRed, "gui": "undercurl" })
-	call s:h("SpellCap",    { "sp": s:accent1, "gui": "undercurl" })
-	call s:h("SpellRare",   { "sp": s:normGreen, "gui": "undercurl" })
-	call s:h("SpellLocal",  { "sp": s:accent4, "gui": "undercurl" })
+	call s:h("PmenuSBar",   { "bg": s:concrete })
+	call s:h("PmenuSel",    { "bg": s:turquoise })
+	call s:h("ColorColumn", { "bg": s:silver })
+	call s:h("SpellBad",    { "sp": s:pomegranate, "gui": "undercurl" })
+	call s:h("SpellCap",    { "sp": s:pomegranate, "gui": "undercurl" })
+	call s:h("SpellRare",   { "sp": s:pumpkin, "gui": "undercurl" })
+	call s:h("SpellLocal",  { "sp": s:pomegranate, "gui": "undercurl" })
 	hi! link CursorColumn	CursorLine
 
 	" Use background for cterm Spell*, which does not support undercurl
-	execute "hi! SpellBad   ctermbg=" s:faintRed.cterm
-	execute "hi! SpellCap   ctermbg=" s:faintBlue.cterm
-	execute "hi! SpellRare  ctermbg=" s:faintGreen.cterm
-	execute "hi! SpellLocal ctermbg=" s:faint.cterm
+	execute "hi! SpellBad   ctermbg=" s:alizarin.cterm
+	execute "hi! SpellCap   ctermbg=" s:alizarin.cterm
+	execute "hi! SpellRare  ctermbg=" s:carrot.cterm
+	execute "hi! SpellLocal ctermbg=" s:alizarin.cterm
 endif
 
 "}}}
 " Highlights - UI ------------------------------------------{{{
-call s:h("Normal",       { "fg": s:norm, "bg": s:bg })
-call s:h("NonText",      { "fg": s:subtle })
-call s:h("Cursor",       { "fg": s:bg, "bg": s:norm })
-call s:h("Visual",       { "bg": s:faintBlue })
-call s:h("IncSearch",    { "bg": s:faintBlue })
-call s:h("Search",       { "bg": s:faintGreen })
-call s:h("StatusLine",   { "fg": s:norm, "bg": s:faint, "gui": "bold", "cterm": "bold" })
-call s:h("StatusLineNC", { "fg": s:dimmed, "bg": s:faint })
-call s:h("SignColumn",   { "fg": s:dimmed })
-call s:h("VertSplit",    { "fg": s:subtle, "bg": s:faint })
-call s:h("TabLine",      { "fg": s:dimmed, "bg": s:faint })
+call s:h("Normal",       { "fg": s:midnightBlue, "bg": s:bg })
+call s:h("NonText",      { "fg": s:concrete })
+call s:h("Cursor",       { "fg": s:clouds, "bg": s:wetAsphalt })
+call s:h("Visual",       { "bg": s:emerald, "fg": s:clouds })
+call s:h("IncSearch",    { "bg": s:sunFlower })
+call s:h("Search",       { "bg": s:turquoise })
+call s:h("StatusLine",   { "fg": s:clouds, "bg": s:concrete, "gui": "italic" })
+call s:h("StatusLineNC", { "fg": s:silver, "bg": s:concrete })
+call s:h("SignColumn",   { "fg": s:silver })
+call s:h("VertSplit",    { "fg": s:silver, "bg": s:silver })
+call s:h("TabLine",      { "fg": s:silver, "bg": s:silver })
 call s:h("TabLineSel",   { "gui": "bold", "cterm": "bold" })
-call s:h("Folded",       { "fg": s:comment, "bg": s:faint })
-call s:h("Directory",    { "fg": s:accent1 })
-call s:h("Title",        { "fg": s:accent4, "gui": "bold", "cterm": "bold" })
-call s:h("ErrorMsg",     { "bg": s:normRed })
-call s:h("DiffAdd",      { "bg": s:faintGreen })
-call s:h("DiffChange",   { "bg": s:faintRed })
-call s:h("DiffDelete",   { "fg": s:normRed, "bg": s:faintRed })
-call s:h("DiffText",     { "bg": s:faintRed, "gui": "bold", "cterm": "bold" })
-call s:h("User1",        { "fg": s:bg, "bg": s:normGreen })
-call s:h("User2",        { "fg": s:bg, "bg": s:normRed })
-call s:h("User3",        { "fg": s:bg, "bg": s:normBlue })
+call s:h("Folded",       { "fg": s:clouds, "bg": s:silver })
+call s:h("Directory",    { "fg": s:peterRiver })
+call s:h("Title",        { "fg": s:carrot, "gui": "bold", "cterm": "bold" })
+call s:h("ErrorMsg",     { "fg": s:pomegranate, "bg": s:pomegranate })
+call s:h("DiffAdd",      { "bg": s:emerald })
+call s:h("DiffChange",   { "bg": s:carrot })
+call s:h("DiffDelete",   { "fg": s:pomegranate, "bg": s:alizarin })
+call s:h("DiffText",     { "bg": s:carrot, "gui": "bold", "cterm": "bold" })
+call s:h("User1",        { "fg": s:clouds, "bg": s:greenSea })
+call s:h("User2",        { "fg": s:clouds, "bg": s:nephritis })
+call s:h("User3",        { "fg": s:clouds, "bg": s:belizeHole })
 hi! link WildMenu	IncSearch
 hi! link FoldColumn	SignColumn
 hi! link WarningMsg	ErrorMsg
@@ -140,23 +148,23 @@ hi! link SpecialKey	NonText
 
 "}}}
 " Highlights - Generic Syntax ------------------------------{{{
-call s:h("Delimiter",  { "fg": s:dimmed })
-call s:h("Comment",    { "fg": s:comment, "gui": "italic" })
-call s:h("Underlined", { "fg": s:accent1, "gui": "underline", "cterm": "underline" })
-call s:h("Type",       { "fg": s:accent2 })
-call s:h("String",     { "fg": s:normBlue })
-call s:h("Keyword",    { "fg": s:accent4, "gui": "bold", "cterm": "bold" })
-call s:h("Todo",       { "fg": s:normRed, "gui": "bold", "cterm": "bold" })
-call s:h("Function",   { "gui": "bold", "cterm": "bold" })
-call s:h("Identifier", { "fg": s:accent1 })
-call s:h("Statement",  { "fg": s:accent1 })
-call s:h("Constant",   { "fg": s:faintBlue, "gui": "bold", "cterm": "bold" })
+call s:h("Delimiter",  { "fg": s:asbestos })
+call s:h("Comment",    { "fg": s:silver, "gui": "italic" })
+call s:h("Underlined", { "fg": s:midnightBlue, "gui": "underline", "cterm": "underline" })
+call s:h("Type",       { "fg": s:wisteria })
+call s:h("String",     { "fg": s:belizeHole })
+call s:h("Keyword",    { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
+call s:h("Todo",       { "fg": s:sunFlower, "gui": "bold", "cterm": "bold" })
+call s:h("Function",   { "fg": s:alizarin, "gui": "bold", "cterm": "bold" })
+call s:h("Identifier", { "fg": s:greenSea })
+call s:h("Statement",  { "fg": s:belizeHole })
+call s:h("Constant",   { "fg": s:peterRiver, "gui": "bold", "cterm": "bold" })
+call s:h("PreProc",    { "fg": s:emerald, "gui": "bold", "cterm": "bold" })
 " hi! link Identifier	Function
 " hi! link Statement	Type
 " hi! link Constant	Directory
 hi! link Number		Constant
 hi! link Special	Constant
-hi! link PreProc	Constant
 hi! link Error		ErrorMsg
 
 "}}}
@@ -197,29 +205,29 @@ hi! link helpURL	Underlined
 
 "}}}
 " Highlights - Python ----------------------------------------{{{
-call s:h("pythonBuiltin",      { "fg": s:greenSea, "gui": "bold", "cterm": "bold" })
-call s:h("pythonBuiltinObj",   { "fg": s:greenSea, "gui": "bold", "cterm": "bold" })
-call s:h("pythonBuiltinFunc",  { "fg": s:greenSea, "gui": "bold", "cterm": "bold" })
-call s:h("pythonEscape",       { "fg": s:normBlue, "gui": "bold", "cterm": "bold" })
-call s:h("pythonException",    { "fg": s:normRed, "gui": "bold", "cterm": "bold" })
-call s:h("pythonPrecondit",    { "fg": s:normGreen })
-call s:h("pythonDecorator",    { "fg": s:dimmed, "gui": "bold", "cterm": "bold" })
-call s:h("pythonRun",          { "fg": s:faintRed, "gui": "bold", "cterm": "bold" })
-call s:h("pythonCoding",       { "fg": s:faintRed, "gui": "bold", "cterm": "bold" })
+call s:h("pythonBuiltin",      { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
+call s:h("pythonBuiltinObj",   { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
+call s:h("pythonEscape",       { "fg": s:belizeHole, "gui": "bold", "cterm": "bold" })
+call s:h("pythonException",    { "fg": s:pomegranate, "gui": "bold", "cterm": "bold" })
+call s:h("pythonPrecondit",    { "fg": s:emerald, "gui": "bold", "cterm": "bold" })
+call s:h("pythonDecorator",    { "fg": s:silver, "gui": "bold", "cterm": "bold" })
+call s:h("pythonRun",          { "fg": s:alizarin, "gui": "bold", "cterm": "bold" })
+call s:h("pythonCoding",       { "fg": s:alizarin, "gui": "bold", "cterm": "bold" })
+hi! link pythonBuiltinFunc Function
 
 "}}}
 " Highlights - Clojure ----------------------------------------{{{
 
-call s:h("clojureSpecial",     { "fg": s:accent8 })
-call s:h("clojureDefn",        { "fg": s:accent8 })
-call s:h("clojureDefMacro",    { "fg": s:accent8 })
-call s:h("clojureDefine",      { "fg": s:accent8 })
-call s:h("clojureMacro",       { "fg": s:accent6 })
-call s:h("clojureCond",        { "fg": s:accent6 })
-call s:h("clojureKeyword",     { "fg": s:accent5 })
-call s:h("clojureFunc",        { "fg": s:accent7 })
-call s:h("clojureRepeat",      { "fg": s:accent8 })
-call s:h("clojureAnonArg",     { "fg": s:faint })
+call s:h("clojureSpecial",     { "fg": s:alizarin, "gui": "bold", "cterm": "bold" })
+call s:h("clojureDefn",        { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
+call s:h("clojureDefMacro",    { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
+call s:h("clojureDefine",      { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
+call s:h("clojureMacro",       { "fg": s:wisteria })
+call s:h("clojureCond",        { "fg": s:greenSea })
+call s:h("clojureKeyword",     { "fg": s:greenSea })
+call s:h("clojureFunc",        { "fg": s:wisteria })
+call s:h("clojureRepeat",      { "fg": s:wisteria })
+call s:h("clojureAnonArg",     { "fg": s:concrete })
 
 "}}}
 " vim: fdm=marker
