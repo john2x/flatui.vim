@@ -1,11 +1,14 @@
 FlatUI
 ======
 
-I wanted a cool and light colorscheme. Instead of trying to come up with my own
-colors, I decided to piggy-back on the work done on [flatuicolors.com](http://flatuicolors.com).
+A refreshing, light colorscheme compatible with terminal Vim, focusing on
+greens and blues, sprinkled with oranges and reds. 
 
-Work in progress. Constantly changing.
-Use a plugin manager to keep up. 
+I wanted a cool, light, xterm compatible colorscheme. Instead of trying to come
+up with my own colors, I decided to piggy-back on the awesome work done on
+[flatuicolors.com](http://flatuicolors.com).
+
+This is a work in progress. Constantly changing. Use a plugin manager to keep up. 
 
 Screenshots:
 ------------
@@ -33,9 +36,10 @@ Screenshots:
 TODO:
 ----
 
-1. Improve syntax colors
+1. Improve syntax colors (this will never be done)
 2. Create vim-airline theme
-3. Set "dark" version
+3. Set "dark" version (dark could be a warmer version. i.e. using mainly
+orange and red)
 
 License
 =======
