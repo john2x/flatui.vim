@@ -20,7 +20,7 @@ let g:colors_name="flatui"
 " Define reusable colors
 let s:midnightBlue=   { "gui": "#2c3e50", "cterm": "236"  }
 let s:clouds=         { "gui": "#ecf0f1", "cterm": "255" }
-let s:silver=         { "gui": "#bdc3c7", "cterm": "7" }
+let s:silver=         { "gui": "#bdc3c7", "cterm": "8" }
 let s:wetAsphalt=     { "gui": "#34495e", "cterm": "239" }
 let s:concrete=       { "gui": "#95a5a6", "cterm": "247" }
 let s:asbestos=       { "gui": "#7f8c8d", "cterm": "245" }
