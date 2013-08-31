@@ -1,20 +1,18 @@
 FlatUI
 ======
 
-Work in progress.
+I wanted a cool and light colorscheme. Work in progress. Constantly changing.
+Use a plugin manager to keep up. 
 
 Colors ripped from [flatuicolors.com](http://flatuicolors.com).
-
-Base taken from [Hemisu](https://github.com/noahfrederick/Hemisu).
 
 TODO:
 ----
 
 1. Improve syntax colors
-2. Set GUI colors
-3. Set "dark" version
+2. Set "dark" version
 
 License
 =======
 
-Same as Hemisu's. [Creative Commons Attribution-NonCommercial 3.0 Unported](http://creativecommons.org/licenses/by-nc/3.0/)
+Same as Vim's. See `:help license`.
