@@ -92,10 +92,10 @@ endfunction
 if version >= 700
 	call s:h("CursorLine",  { "bg": s:silver })
 	call s:h("MatchParen",  { "fg": s:bg, "bg": s:sunFlower, "gui": "bold" })
-	call s:h("Pmenu",       { "bg": s:silver })
-	call s:h("PmenuThumb",  { "bg": s:norm })
-	call s:h("PmenuSBar",   { "bg": s:concrete })
-	call s:h("PmenuSel",    { "bg": s:turquoise })
+	call s:h("Pmenu",       { "fg": s:clouds, "bg": s:wetAsphalt })
+	call s:h("PmenuThumb",  { "bg": s:sunFlower })
+	call s:h("PmenuSBar",   { "bg": s:midnightBlue })
+	call s:h("PmenuSel",    { "bg": s:sunFlower })
 	call s:h("ColorColumn", { "bg": s:silver })
 	call s:h("SpellBad",    { "sp": s:pomegranate, "gui": "undercurl" })
 	call s:h("SpellCap",    { "sp": s:pomegranate, "gui": "undercurl" })
@@ -128,6 +128,7 @@ call s:h("Folded",       { "fg": s:clouds, "bg": s:silver })
 call s:h("Directory",    { "fg": s:peterRiver })
 call s:h("Title",        { "fg": s:carrot, "gui": "bold", "cterm": "bold" })
 call s:h("ErrorMsg",     { "fg": s:alizarin, "bg": s:pomegranate, "gui": "bold", "cterm": "bold" })
+call s:h("WarningMsg",   { "fg": s:carrot, "bg": s:pumpkin, "gui": "bold", "cterm": "bold" })
 call s:h("DiffAdd",      { "bg": s:emerald })
 call s:h("DiffChange",   { "bg": s:carrot })
 call s:h("DiffDelete",   { "bg": s:alizarin })
@@ -137,7 +138,6 @@ call s:h("User2",        { "fg": s:clouds, "bg": s:nephritis })
 call s:h("User3",        { "fg": s:clouds, "bg": s:belizeHole })
 hi! link WildMenu	IncSearch
 hi! link FoldColumn	SignColumn
-hi! link WarningMsg	ErrorMsg
 hi! link MoreMsg	Title
 hi! link Question	MoreMsg
 hi! link ModeMsg	MoreMsg
@@ -147,23 +147,31 @@ hi! link SpecialKey	NonText
 
 "}}}
 " Highlights - Generic Syntax ------------------------------{{{
-call s:h("Delimiter",  { "fg": s:asbestos })
 call s:h("Comment",    { "fg": s:silver, "gui": "italic" })
-call s:h("Underlined", { "fg": s:midnightBlue, "gui": "underline", "cterm": "underline" })
-call s:h("Type",       { "fg": s:wisteria })
-call s:h("String",     { "fg": s:belizeHole })
-call s:h("Keyword",    { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
-call s:h("Todo",       { "fg": s:sunFlower, "gui": "bold", "cterm": "bold" })
-call s:h("Function",   { "fg": s:wetAsphalt, "gui": "bold", "cterm": "bold" })
-call s:h("Identifier", { "fg": s:greenSea })
-call s:h("Statement",  { "fg": s:belizeHole })
+
 call s:h("Constant",   { "fg": s:peterRiver, "gui": "bold", "cterm": "bold" })
+call s:h("String",     { "fg": s:belizeHole })
+call s:h("Character",  { "fg": s:belizeHole, "gui": "bold", "cterm": "bold" })
+
+call s:h("Identifier", { "fg": s:nephritis })
+call s:h("Function",   { "fg": s:wetAsphalt, "gui": "bold", "cterm": "bold" })
+
+call s:h("Statement",  { "fg": s:wisteria })
+call s:h("Operator",   { "fg": s:greenSea })
+call s:h("Keyword",    { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
+call s:h("Exception",  { "fg": s:alizarin })
+
 call s:h("PreProc",    { "fg": s:emerald, "gui": "bold", "cterm": "bold" })
-" hi! link Identifier	Function
-" hi! link Statement	Type
-" hi! link Constant	Directory
-hi! link Number		Constant
-hi! link Special	Constant
+
+call s:h("Type",       { "fg": s:amethyst })
+
+call s:h("Special",    { "fg": s:pumpkin })
+call s:h("Delimiter",  { "fg": s:asbestos })
+
+call s:h("Underlined", { "fg": s:midnightBlue, "gui": "underline", "cterm": "underline" })
+
+call s:h("Todo",       { "fg": s:sunFlower, "bg": s:orange, "gui": "bold", "cterm": "bold" })
+
 hi! link Error		ErrorMsg
 
 "}}}
@@ -176,7 +184,7 @@ hi! link htmlEndTag	htmlTag
 " Highlights - CSS -----------------------------------------{{{
 hi! link cssBraces	Delimiter
 hi! link cssSelectorOp	cssBraces
-hi! link cssClassName	Normal
+hi! link cssClassName	Type
 
 "}}}
 " Highlights - Markdown ------------------------------------{{{
@@ -184,14 +192,20 @@ hi! link mkdListItem	mkdDelimiter
 
 "}}}
 " Highlights - Shell ---------------------------------------{{{
-hi! link shOperator	Delimiter
+hi! link shOperator	Operator
 hi! link shCaseBar	Delimiter
 
 "}}}
 " Highlights - JavaScript ----------------------------------{{{
 hi! link javaScriptValue	Constant
 hi! link javaScriptNull	Constant
-hi! link javaScriptBraces	Normal
+hi! link jsObjectKey Keyword
+hi! link jsFunction Function
+hi! link jsBraces Delimiter
+hi! link jsParens Delimiter
+hi! link jsFuncBraces jsBraces
+hi! link jsFuncParens jsParens
+hi! link jsNoise Comment
 
 "}}}
 " Highlights - Help ----------------------------------------{{{
@@ -204,29 +218,22 @@ hi! link helpURL	Underlined
 
 "}}}
 " Highlights - Python ----------------------------------------{{{
-call s:h("pythonBuiltin",      { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
-call s:h("pythonBuiltinObj",   { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
-call s:h("pythonEscape",       { "fg": s:belizeHole, "gui": "bold", "cterm": "bold" })
-call s:h("pythonException",    { "fg": s:pomegranate, "gui": "bold", "cterm": "bold" })
-call s:h("pythonPrecondit",    { "fg": s:emerald, "gui": "bold", "cterm": "bold" })
-call s:h("pythonDecorator",    { "fg": s:silver, "gui": "bold", "cterm": "bold" })
-call s:h("pythonRun",          { "fg": s:alizarin, "gui": "bold", "cterm": "bold" })
-call s:h("pythonCoding",       { "fg": s:alizarin, "gui": "bold", "cterm": "bold" })
-hi! link pythonBuiltinFunc Function
+hi! link pythonBuiltin Identifier
+hi! link pythonBuiltinFunc Operator
+hi! link pythonBuiltinObj Constant
+hi! link pythonDecorator Operator
+hi! link pythonDottedName pythonDecorator
 
 "}}}
 " Highlights - Clojure ----------------------------------------{{{
-
-call s:h("clojureSpecial",     { "fg": s:alizarin, "gui": "bold", "cterm": "bold" })
-call s:h("clojureDefn",        { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
-call s:h("clojureDefMacro",    { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
-call s:h("clojureDefine",      { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
-call s:h("clojureMacro",       { "fg": s:wisteria })
-call s:h("clojureCond",        { "fg": s:greenSea })
-call s:h("clojureKeyword",     { "fg": s:greenSea })
-call s:h("clojureFunc",        { "fg": s:wisteria })
-call s:h("clojureRepeat",      { "fg": s:wisteria })
-call s:h("clojureAnonArg",     { "fg": s:concrete })
+hi! link clojureSpecial Special
+hi! link clojureDefn Operator
+hi! link clojureDefMacro Macro
+hi! link clojureKeyword String
+hi! link clojureFunc Operator
+hi! link clojureMacro Function
+hi! link clojureAnonArg Comment
+hi! link clojureDefine Type
 
 "}}}
 " vim: fdm=marker
