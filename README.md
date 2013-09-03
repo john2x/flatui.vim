@@ -36,10 +36,11 @@ Screenshots:
 TODO:
 ----
 
-1. Improve syntax colors (this will never be done)
-2. Create vim-airline theme
-3. Set "dark" version (dark could be a warmer version. i.e. using mainly
+1. Improve syntax colors (this will never over)
+2. Set "dark" version (dark could be a warmer version. i.e. using mainly
 orange and red)
+3. Create vim-airline theme
+4. Higher contrast version (maybe)
 
 License
 =======

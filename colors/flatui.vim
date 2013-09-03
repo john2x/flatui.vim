@@ -1,7 +1,7 @@
 " flatui.vim - Vim color scheme (http://flatuicolors.com)
 " ----------------------------------------------------------
 " Author:	  John Louis Del Rosario (http://john2x.com/)
-" Version:	0.3
+" Version:	0.4
 " License:	Same as Vim's. See ":help license".
 " ----------------------------------------------------------
 
