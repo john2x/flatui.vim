@@ -16,22 +16,30 @@ Screenshots:
 **Note**: All screenshots taken using terminal Vim, and using the
 [vim-airline](https://github.com/bling/vim-airline) theme "luna".
 
-### VimL
+### Highligh groups
+![FlatUI highlight groups][highlight]
+
+### VimL (showing comlpetion)
 ![FlatUI with VimL][viml]
 
 ### Python + NERDTree (showing visual selection)
 ![FlatUI with Python + NERDTree][python]
 
-### HTML + CSS
+### HTML + CSS (showing search and incremental search highlights)
 ![FlatUI with HTML + CSS][htmlcss]
 
-### Clojure (showing search and incremental search highlights)
+### Javascript (showing TODO/FIXME)
+![FlatUI with Javascript][javascript]
+
+### Clojure (showing matching parens)
 ![FlatUI with Clojure][clojure]
 
-[viml]: http://i.imgur.com/PUUZJXr.png
-[python]: http://i.imgur.com/bMRVuLh.png
-[htmlcss]: http://i.imgur.com/gSjNUd0.png
-[clojure]: http://i.imgur.com/18dZ5zj.png
+[highlight]: http://i.imgur.com/DPoIMKX.png
+[viml]: http://i.imgur.com/e6BmWRS.png
+[python]: http://i.imgur.com/TSAN1UU.png
+[htmlcss]: http://i.imgur.com/yE6MEvB.png
+[javascript]: http://i.imgur.com/OpVB12k.png
+[clojure]: http://i.imgur.com/TbKhg7K.png
 
 TODO:
 ----

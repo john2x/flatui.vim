@@ -229,7 +229,7 @@ hi! link pythonDottedName pythonDecorator
 hi! link clojureSpecial Special
 hi! link clojureDefn Operator
 hi! link clojureDefMacro Macro
-hi! link clojureKeyword String
+hi! link clojureKeyword Keyword
 hi! link clojureFunc Operator
 hi! link clojureMacro Function
 hi! link clojureAnonArg Comment
