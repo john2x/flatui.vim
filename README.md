@@ -16,7 +16,7 @@ Screenshots:
 **Note**: All screenshots taken using terminal Vim, and using the
 [vim-airline](https://github.com/bling/vim-airline) theme "luna".
 
-### Highligh groups
+### Highlight groups
 ![FlatUI highlight groups][highlight]
 
 ### VimL (showing comlpetion)
@@ -44,7 +44,7 @@ Screenshots:
 TODO:
 ----
 
-1. Improve syntax colors (this will never over)
+1. Improve syntax colors (this will never be over)
 2. Set "dark" version (dark could be a warmer version. i.e. using mainly
 orange and red)
 3. Create vim-airline theme
