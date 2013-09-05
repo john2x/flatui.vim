@@ -49,6 +49,7 @@ TODO:
 orange and red)
 3. Create vim-airline theme
 4. Higher contrast version (maybe)
+5. Improve highlight groups of other languages (pull requests?)
 
 License
 =======
