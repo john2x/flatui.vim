@@ -185,6 +185,7 @@ hi! link htmlEndTag	htmlTag
 hi! link cssBraces	Delimiter
 hi! link cssSelectorOp	cssBraces
 hi! link cssClassName	Type
+hi! link cssIdentifier Identifier
 
 "}}}
 " Highlights - Markdown ------------------------------------{{{
