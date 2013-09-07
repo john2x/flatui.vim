@@ -1,7 +1,7 @@
 " flatui.vim - Vim color scheme (http://flatuicolors.com)
 " ----------------------------------------------------------
 " Author:	  John Louis Del Rosario (http://john2x.com/)
-" Version:	0.4
+" Version:	0.5
 " License:	Same as Vim's. See ":help license".
 " ----------------------------------------------------------
 
@@ -16,12 +16,13 @@ endif
 let g:colors_name="flatui"
 
 "}}}
+
 " The Colors -----------------------------------------------{{{
 " Define reusable colors
 let s:midnightBlue=   { "gui": "#2c3e50", "cterm": "236"  }
 let s:clouds=         { "gui": "#ecf0f1", "cterm": "255" }
 let s:silver=         { "gui": "#bdc3c7", "cterm": "7" }
-let s:wetAsphalt=     { "gui": "#34495e", "cterm": "239" }
+let s:wetAsphalt=     { "gui": "#34495e", "cterm": "237" }
 let s:concrete=       { "gui": "#95a5a6", "cterm": "247" }
 let s:asbestos=       { "gui": "#7f8c8d", "cterm": "245" }
 
@@ -43,38 +44,58 @@ let s:orange=         { "gui": "#f39c12", "cterm": "214" }
 let s:alizarin=       { "gui": "#e74c3c", "cterm": "196"  }
 let s:pomegranate=    { "gui": "#c0392b", "cterm": "124" }
 
-" Assign to semantic categories based on background color
-" Light theme
-let s:bg=s:clouds
-let s:norm=s:midnightBlue
-let s:comment=s:silver
-let s:dimmed=s:asbestos
-let s:subtle=s:concrete
-let s:faint=s:silver
-let s:faintAccent1=s:turquoise
-let s:faintAccent2=s:emerald
-let s:faintAccent3=s:peterRiver
-let s:faintAccent4=s:amethyst
-let s:faintAccent5=s:concrete
-let s:faintAccent6=s:sunFlower
-let s:faintAccent7=s:carrot
-let s:faintAccent8=s:alizarin
-let s:normAccent1=s:greenSea
-let s:normAccent2=s:nephritis
-let s:normAccent3=s:belizeHole
-let s:normAccent4=s:wisteria
-let s:normAccent5=s:wetAsphalt
-let s:normAccent6=s:orange
-let s:normAccent7=s:pumpkin
-let s:normAccent8=s:pomegranate
-let s:normRed=s:pomegranate
-let s:normGreen=s:nephritis
-let s:normBlue=s:belizeHole
-let s:faintRed=s:alizarin
-let s:faintGreen=s:emerald
-let s:faintBlue=s:peterRiver
 
+if &background=="light"
+  let s:bg=s:clouds
+  let s:norm=s:midnightBlue
+  let s:lightNorm=s:wetAsphalt
+  let s:lightBg=s:silver
+
+  let s:neutral1=s:concrete
+  let s:neutral2=s:asbestos
+
+  let s:lightAccent1=s:turquoise
+  let s:lightAccent2=s:emerald
+  let s:lightAccent3=s:peterRiver
+  let s:lightAccent4=s:amethyst
+  let s:lightAccent5=s:sunFlower
+  let s:lightAccent6=s:carrot
+  let s:lightAccent7=s:alizarin
+
+  let s:darkAccent1=s:greenSea
+  let s:darkAccent2=s:nephritis
+  let s:darkAccent3=s:belizeHole
+  let s:darkAccent4=s:wisteria
+  let s:darkAccent5=s:orange
+  let s:darkAccent6=s:pumpkin
+  let s:darkAccent7=s:pomegranate
+else
+  let s:bg=s:midnightBlue
+  let s:norm=s:clouds
+  let s:lightNorm=s:silver
+  let s:lightBg=s:wetAsphalt
+
+  let s:neutral1=s:concrete
+  let s:neutral2=s:asbestos
+
+  let s:darkAccent1=s:turquoise
+  let s:darkAccent2=s:emerald
+  let s:darkAccent3=s:peterRiver
+  let s:darkAccent4=s:amethyst
+  let s:darkAccent5=s:sunFlower
+  let s:darkAccent6=s:carrot
+  let s:darkAccent7=s:alizarin
+
+  let s:lightAccent1=s:greenSea
+  let s:lightAccent2=s:nephritis
+  let s:lightAccent3=s:belizeHole
+  let s:lightAccent4=s:wisteria
+  let s:lightAccent5=s:orange
+  let s:lightAccent6=s:pumpkin
+  let s:lightAccent7=s:pomegranate
+endif
 "}}}
+
 " Utilility Function ---------------------------------------{{{
 function! s:h(group, style)
 	execute "highlight" a:group
@@ -88,20 +109,21 @@ function! s:h(group, style)
 endfunction
 
 "}}}
+
 " Highlights - Vim >= 7 ------------------------------------{{{
 if version >= 700
-	call s:h("CursorLine",  { "bg": s:silver })
-	call s:h("MatchParen",  { "fg": s:bg, "bg": s:sunFlower, "gui": "bold" })
-	call s:h("Pmenu",       { "fg": s:clouds, "bg": s:wetAsphalt })
-	call s:h("PmenuThumb",  { "bg": s:sunFlower })
-	call s:h("PmenuSBar",   { "bg": s:midnightBlue })
-	call s:h("PmenuSel",    { "bg": s:sunFlower })
-	call s:h("ColorColumn", { "bg": s:silver })
-	call s:h("SpellBad",    { "sp": s:pomegranate, "gui": "undercurl" })
-	call s:h("SpellCap",    { "sp": s:pomegranate, "gui": "undercurl" })
-	call s:h("SpellRare",   { "sp": s:pumpkin, "gui": "undercurl" })
-	call s:h("SpellLocal",  { "sp": s:pomegranate, "gui": "undercurl" })
-	hi! link CursorColumn	CursorLine
+    call s:h("CursorLine",  { "bg": s:lightBg })
+    call s:h("MatchParen",  { "fg": s:norm, "bg": s:lightAccent5, "gui": "bold" })
+    call s:h("Pmenu",       { "fg": s:bg, "bg": s:lightNorm })
+    call s:h("PmenuThumb",  { "bg": s:lightAccent5 })
+    call s:h("PmenuSBar",   { "bg": s:norm })
+    call s:h("PmenuSel",    { "bg": s:lightAccent5 })
+    call s:h("ColorColumn", { "bg": s:lightBg })
+    call s:h("SpellBad",    { "sp": s:darkAccent7, "gui": "undercurl" })
+    call s:h("SpellCap",    { "sp": s:darkAccent7, "gui": "undercurl" })
+    call s:h("SpellRare",   { "sp": s:darkAccent6, "gui": "undercurl" })
+    call s:h("SpellLocal",  { "sp": s:darkAccent7, "gui": "undercurl" })
+  hi! link CursorColumn	CursorLine
 
 	" Use background for cterm Spell*, which does not support undercurl
 	execute "hi! SpellBad   ctermbg=" s:alizarin.cterm
@@ -111,31 +133,32 @@ if version >= 700
 endif
 
 "}}}
+
 " Highlights - UI ------------------------------------------{{{
-call s:h("Normal",       { "fg": s:midnightBlue, "bg": s:bg })
-call s:h("NonText",      { "fg": s:concrete })
-call s:h("Cursor",       { "fg": s:clouds, "bg": s:wetAsphalt })
-call s:h("Visual",       { "bg": s:emerald, "fg": s:clouds })
-call s:h("IncSearch",    { "bg": s:sunFlower })
-call s:h("Search",       { "bg": s:turquoise })
-call s:h("StatusLine",   { "fg": s:clouds, "bg": s:concrete, "gui": "italic" })
-call s:h("StatusLineNC", { "fg": s:silver, "bg": s:concrete })
-call s:h("SignColumn",   { "fg": s:silver })
-call s:h("VertSplit",    { "fg": s:silver, "bg": s:silver })
-call s:h("TabLine",      { "fg": s:silver, "bg": s:silver })
-call s:h("TabLineSel",   { "gui": "bold", "cterm": "bold" })
-call s:h("Folded",       { "fg": s:clouds, "bg": s:silver })
-call s:h("Directory",    { "fg": s:peterRiver })
-call s:h("Title",        { "fg": s:carrot, "gui": "bold", "cterm": "bold" })
-call s:h("ErrorMsg",     { "fg": s:alizarin, "bg": s:pomegranate, "gui": "bold", "cterm": "bold" })
-call s:h("WarningMsg",   { "fg": s:carrot, "bg": s:pumpkin, "gui": "bold", "cterm": "bold" })
-call s:h("DiffAdd",      { "bg": s:emerald })
-call s:h("DiffChange",   { "bg": s:carrot })
-call s:h("DiffDelete",   { "bg": s:alizarin })
-call s:h("DiffText",     { "bg": s:carrot, "gui": "bold", "cterm": "bold" })
-call s:h("User1",        { "fg": s:clouds, "bg": s:greenSea })
-call s:h("User2",        { "fg": s:clouds, "bg": s:nephritis })
-call s:h("User3",        { "fg": s:clouds, "bg": s:belizeHole })
+  call s:h("Normal",       { "fg": s:norm, "bg": s:bg })
+  call s:h("NonText",      { "fg": s:neutral1 })
+  call s:h("Cursor",       { "fg": s:bg, "bg": s:lightNorm })
+  call s:h("Visual",       { "bg": s:lightAccent2, "fg": s:bg })
+  call s:h("IncSearch",    { "bg": s:lightAccent5 })
+  call s:h("Search",       { "bg": s:lightAccent1 })
+  call s:h("StatusLine",   { "fg": s:bg, "bg": s:neutral1, "gui": "italic" })
+  call s:h("StatusLineNC", { "fg": s:lightBg, "bg": s:neutral1 })
+  call s:h("SignColumn",   { "fg": s:lightBg })
+  call s:h("VertSplit",    { "fg": s:lightBg, "bg": s:lightBg })
+  call s:h("TabLine",      { "fg": s:lightBg, "bg": s:lightBg })
+  call s:h("TabLineSel",   { "gui": "bold", "cterm": "bold" })
+  call s:h("Folded",       { "fg": s:bg, "bg": s:lightBg })
+  call s:h("Directory",    { "fg": s:lightAccent3 })
+  call s:h("Title",        { "fg": s:lightAccent6, "gui": "bold", "cterm": "bold" })
+  call s:h("ErrorMsg",     { "fg": s:lightAccent7, "bg": s:darkAccent7, "gui": "bold", "cterm": "bold" })
+  call s:h("WarningMsg",   { "fg": s:lightAccent6, "bg": s:darkAccent6, "gui": "bold", "cterm": "bold" })
+  call s:h("DiffAdd",      { "bg": s:lightAccent2 })
+  call s:h("DiffChange",   { "bg": s:lightAccent6 })
+  call s:h("DiffDelete",   { "bg": s:lightAccent7 })
+  call s:h("DiffText",     { "bg": s:lightAccent6, "gui": "bold", "cterm": "bold" })
+  call s:h("User1",        { "fg": s:bg, "bg": s:darkAccent1 })
+  call s:h("User2",        { "fg": s:bg, "bg": s:darkAccent2 })
+  call s:h("User3",        { "fg": s:bg, "bg": s:darkAccent3 })
 hi! link WildMenu	IncSearch
 hi! link FoldColumn	SignColumn
 hi! link MoreMsg	Title
@@ -146,41 +169,44 @@ hi! link LineNr		NonText
 hi! link SpecialKey	NonText
 
 "}}}
+
 " Highlights - Generic Syntax ------------------------------{{{
-call s:h("Comment",    { "fg": s:silver, "gui": "italic" })
+  call s:h("Comment",    { "fg": s:lightBg, "gui": "italic" })
 
-call s:h("Constant",   { "fg": s:peterRiver, "gui": "bold", "cterm": "bold" })
-call s:h("String",     { "fg": s:belizeHole })
-call s:h("Character",  { "fg": s:belizeHole, "gui": "bold", "cterm": "bold" })
+  call s:h("Constant",   { "fg": s:lightAccent3, "gui": "bold", "cterm": "bold" })
+  call s:h("String",     { "fg": s:darkAccent3 })
+  call s:h("Character",  { "fg": s:darkAccent3, "gui": "bold", "cterm": "bold" })
 
-call s:h("Identifier", { "fg": s:nephritis })
-call s:h("Function",   { "fg": s:wetAsphalt, "gui": "bold", "cterm": "bold" })
+  call s:h("Identifier", { "fg": s:darkAccent2 })
+  call s:h("Function",   { "fg": s:lightNorm, "gui": "bold", "cterm": "bold" })
 
-call s:h("Statement",  { "fg": s:wisteria })
-call s:h("Operator",   { "fg": s:greenSea })
-call s:h("Keyword",    { "fg": s:turquoise, "gui": "bold", "cterm": "bold" })
-call s:h("Exception",  { "fg": s:alizarin })
+  call s:h("Statement",  { "fg": s:darkAccent4 })
+  call s:h("Operator",   { "fg": s:darkAccent1 })
+  call s:h("Keyword",    { "fg": s:lightAccent1, "gui": "bold", "cterm": "bold" })
+  call s:h("Exception",  { "fg": s:lightAccent7 })
 
-call s:h("PreProc",    { "fg": s:emerald, "gui": "bold", "cterm": "bold" })
+  call s:h("PreProc",    { "fg": s:lightAccent2, "gui": "bold", "cterm": "bold" })
 
-call s:h("Type",       { "fg": s:amethyst })
+  call s:h("Type",       { "fg": s:lightAccent4 })
 
-call s:h("Special",    { "fg": s:pumpkin })
-call s:h("Delimiter",  { "fg": s:asbestos })
+  call s:h("Special",    { "fg": s:darkAccent6 })
+  call s:h("Delimiter",  { "fg": s:neutral2 })
 
-call s:h("Underlined", { "fg": s:midnightBlue, "gui": "underline", "cterm": "underline" })
+  call s:h("Underlined", { "fg": s:norm, "gui": "underline", "cterm": "underline" })
 
-call s:h("Todo",       { "fg": s:sunFlower, "bg": s:orange, "gui": "bold", "cterm": "bold" })
+  call s:h("Todo",       { "fg": s:lightAccent5, "bg": s:darkAccent5, "gui": "bold", "cterm": "bold" })
 
 hi! link Error		ErrorMsg
 
 "}}}
+
 " Highlights - HTML ----------------------------------------{{{
 hi! link htmlLink	Underlined
 hi! link htmlTag	Type
 hi! link htmlEndTag	htmlTag
 
 "}}}
+
 " Highlights - CSS -----------------------------------------{{{
 hi! link cssBraces	Delimiter
 hi! link cssSelectorOp	cssBraces
@@ -188,15 +214,18 @@ hi! link cssClassName	Type
 hi! link cssIdentifier Identifier
 
 "}}}
+
 " Highlights - Markdown ------------------------------------{{{
 hi! link mkdListItem	mkdDelimiter
 
 "}}}
+
 " Highlights - Shell ---------------------------------------{{{
 hi! link shOperator	Operator
 hi! link shCaseBar	Delimiter
 
 "}}}
+
 " Highlights - JavaScript ----------------------------------{{{
 hi! link javaScriptValue	Constant
 hi! link javaScriptNull	Constant
@@ -209,6 +238,7 @@ hi! link jsFuncParens jsParens
 hi! link jsNoise Comment
 
 "}}}
+
 " Highlights - Help ----------------------------------------{{{
 hi! link helpExample	String
 hi! link helpHeadline	Title
@@ -218,6 +248,7 @@ hi! link helpHyperTextJump	Underlined
 hi! link helpURL	Underlined
 
 "}}}
+
 " Highlights - Python ----------------------------------------{{{
 hi! link pythonBuiltin Identifier
 hi! link pythonBuiltinFunc Operator
@@ -226,6 +257,7 @@ hi! link pythonDecorator Operator
 hi! link pythonDottedName pythonDecorator
 
 "}}}
+
 " Highlights - Clojure ----------------------------------------{{{
 hi! link clojureSpecial Special
 hi! link clojureDefn Operator
@@ -237,4 +269,5 @@ hi! link clojureAnonArg Comment
 hi! link clojureDefine Type
 
 "}}}
+
 " vim: fdm=marker
