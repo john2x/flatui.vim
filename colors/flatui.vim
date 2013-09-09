@@ -91,6 +91,7 @@ endfunction
 " Highlights - Vim >= 7 ------------------------------------{{{
 if version >= 700
 	call s:h("CursorLine",  { "bg": s:silver })
+	call s:h("CursorLineNr",  { "fg": s:alizarin })
 	call s:h("MatchParen",  { "fg": s:bg, "bg": s:sunFlower, "gui": "bold" })
 	call s:h("Pmenu",       { "fg": s:clouds, "bg": s:wetAsphalt })
 	call s:h("PmenuThumb",  { "bg": s:sunFlower })
@@ -127,7 +128,7 @@ call s:h("TabLineSel",   { "gui": "bold", "cterm": "bold" })
 call s:h("Folded",       { "fg": s:clouds, "bg": s:silver })
 call s:h("Directory",    { "fg": s:peterRiver })
 call s:h("Title",        { "fg": s:carrot, "gui": "bold", "cterm": "bold" })
-call s:h("ErrorMsg",     { "fg": s:alizarin, "bg": s:pomegranate, "gui": "bold", "cterm": "bold" })
+call s:h("ErrorMsg",     { "fg": s:carrot, "bg": s:pomegranate, "gui": "bold", "cterm": "bold" })
 call s:h("WarningMsg",   { "fg": s:carrot, "bg": s:pumpkin, "gui": "bold", "cterm": "bold" })
 call s:h("DiffAdd",      { "bg": s:emerald })
 call s:h("DiffChange",   { "bg": s:carrot })
