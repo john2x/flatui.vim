@@ -41,6 +41,12 @@ Screenshots:
 [javascript]: http://i.imgur.com/OpVB12k.png
 [clojure]: http://i.imgur.com/TbKhg7K.png
 
+
+Known issues:
+-------------
+
+1. [Colors are too dark/light or just don't look right on GVim/Terminal vim.](https://github.com/john2x/flatui.vim/issues/2)
+
 TODO:
 ----
 
