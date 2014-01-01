@@ -182,7 +182,7 @@ hi! link SpecialKey	NonText
 
   call s:h("Statement",  { "fg": s:darkAccent4 })
   call s:h("Operator",   { "fg": s:darkAccent1 })
-  call s:h("Keyword",    { "fg": s:lightAccent1 })
+  call s:h("Keyword",    { "fg": s:lightAccent1, "gui": "bold", "cterm": "bold" })
   call s:h("Exception",  { "fg": s:lightAccent7 })
 
   call s:h("PreProc",    { "fg": s:lightAccent2, "gui": "bold", "cterm": "bold" })
